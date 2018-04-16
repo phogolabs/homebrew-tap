@@ -7,9 +7,9 @@ require 'language/go'
 class Parcel < Formula
   desc 'Golang Resource Bundler'
   homepage 'https://phogolabs.github.io/opensource/parcel'
-  url 'https://github.com/phogolabs/parcel/archive/v0.1.tar.gz'
-  sha256 '73980ebe5cb054cca566d249ee2d2af4e06f5a6c075ba27861e3ef99cf5f55a7'
-  version '0.1'
+  url 'https://github.com/phogolabs/parcel/archive/v0.2.tar.gz'
+  sha256 'fe634242733e1f2f051605c026ca9abd00a96d3c099503ce99888f707c85550e'
+  version '0.2'
 
   depends_on 'go' => :build
   depends_on 'glide' => :build
