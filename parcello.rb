@@ -7,9 +7,9 @@ require 'language/go'
 class Parcello < Formula
   desc 'Golang Resource Bundler'
   homepage 'https://phogolabs.github.io/opensource/parcello'
-  url 'https://github.com/phogolabs/parcello/archive/v0.5.tar.gz'
-  sha256 '379750a8291028237dff35240bb63e0a92912b6bf6e097a7634783336ed9c3cf'
-  version '0.5'
+  url 'https://github.com/phogolabs/parcello/archive/v0.6.tar.gz'
+  sha256 'be4f030fcbaf32841152eb73b2b9d8ad7fa5c8f2536d71d78b983c3a124d1332'
+  version '0.6'
 
   depends_on 'go' => :build
   depends_on 'glide' => :build
@@ -34,6 +34,6 @@ class Parcello < Formula
 
   test do
     version = pipe_output("#{bin}/parcello -v")
-    assert_match(/0.5/, version)
+    assert_match(/0.6/, version)
   end
 end
