@@ -4,9 +4,9 @@ Homebrew TAP for Phogo Labs Software
 
 Presently, the tap installs:
 
-- [parcel](https://github.com/phogolabs/parcel) - Golang Resournce Bundler
+- [parcello](https://github.com/phogolabs/parcello) - Golang Resournce Bundler and Embedder
 
 ```console
 $ brew tap phogolabs/tap
-$ brew install parcel
+$ brew install parcello
 ```
