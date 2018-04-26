@@ -21,8 +21,9 @@ class Parcello < Formula
       Dir.chdir(package_dir) do
         system 'glide', 'install'
         system 'go', 'build', "#{package_name}/cmd/parcello"
-        bin.install 'parcello'
       end
+
+      bin.install 'parcello'
     end
   end
 
