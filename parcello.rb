@@ -6,7 +6,7 @@ require 'language/go'
 # Homebrew formula that install Parcello
 class Parcello < Formula
   desc 'Golang Resource Bundler and Embedder'
-  homepage 'https://phogolabs.github.io/opensource/parcello'
+  homepage 'https://phogolabs.github.io/opensource/parcello/index.html'
   url 'https://github.com/phogolabs/parcello/archive/v0.8.tar.gz'
   sha256 '32f7682f18a65a47a2e87a2b1b4adc9605421e17e739be447bcd867294d63b9a'
   version '0.8'
