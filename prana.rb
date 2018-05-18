@@ -7,9 +7,9 @@ require 'language/go'
 class Prana < Formula
   desc 'Golang Database Manager'
   homepage 'https://phogolabs.github.io/opensource/prana'
-  url 'https://github.com/phogolabs/prana/archive/v1.0-beta.tar.gz'
-  sha256 '99f95e2d6b1394561bc05de223661800e9d922c4223ffaad427878b5e05490f5'
-  version '1.0-beta'
+  url 'https://github.com/phogolabs/prana/archive/v1.0-beta-01.tar.gz'
+  sha256 '9288cb837eb940569687e6f4c332107827708b6ea45a6f075ee818084b8b8d30'
+  version '1.0-beta-01'
 
   depends_on 'go' => :build
   depends_on 'glide' => :build
