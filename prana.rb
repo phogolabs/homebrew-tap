@@ -24,18 +24,17 @@ class Prana < Formula
   end
 
   def configure
-    Dir.mktmpdir("go") do |dir|
-      ENV['GOPATH'] = dir
+    dir = Dir.mktmpdir
+    ENV['GOPATH'] = dir
 
-      package_root = 'github.com/phogolabs'
-      package_root_dir = "#{buildpath}/src/#{package_root}"
-      package_dir = "#{package_root_dir}/prana"
+    package_root = 'github.com/phogolabs'
+    package_root_dir = "#{buildpath}/src/#{package_root}"
+    package_dir = "#{package_root_dir}/prana"
 
-      mkdir_p package_root_dir
-      mv buildpath package_root_dir
+    mkdir_p package_root_dir
+    mv buildpath package_root_dir
 
-      yield package_root, package_dir
-    end
+    yield package_root, package_dir
   end
 
   test do
