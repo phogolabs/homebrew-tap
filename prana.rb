@@ -17,22 +17,24 @@ class Prana < Formula
     configure do |package_root, package_dir|
       Dir.chdir(package_dir) do
         system "script/build.sh"
+        bin.install 'prana'
       end
-
-      bin.install 'prana'
     end
   end
 
   def configure
-    ENV['GOPATH'] = buildpath
-    package_root = 'github.com/phogolabs'
-    package_root_dir = "#{buildpath}/src/#{package_root}"
-    package_dir = "#{package_root_dir}/prana"
+    mktmpdir do |dir|
+      ENV['GOPATH'] = dir
 
-    mkdir_p package_root_dir
-    ln_sf buildpath, package_dir
+      package_root = 'github.com/phogolabs'
+      package_root_dir = "#{buildpath}/src/#{package_root}"
+      package_dir = "#{package_root_dir}/prana"
 
-    yield package_root, package_dir
+      mkdir_p package_root_dir
+      mv buildpath package_root_dir
+
+      yield package_root, package_dir
+    end
   end
 
   test do
