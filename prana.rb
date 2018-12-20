@@ -24,7 +24,7 @@ class Prana < Formula
   end
 
   def configure
-    mktmpdir do |dir|
+    Dir.mktmpdir do |dir|
       ENV['GOPATH'] = dir
 
       package_root = 'github.com/phogolabs'
