@@ -21,7 +21,8 @@ class Prana < Formula
       ENV['GO111MODULE'] = 'on'
 
       Dir.chdir(package_dir) do
-        system 'go', 'get', '-v'
+        system 'go', 'mod', 'download'
+        system 'go', 'mod', 'verify'
         system 'go', 'build', "#{package_name}/cmd/prana"
       end
 
