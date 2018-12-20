@@ -32,12 +32,13 @@ class Prana < Formula
       ENV['GOPATH'] = dir
       ENV['GO111MODULE'] = 'on'
 
-      package_root = 'github.com/phogolabs'
-      package_root_dir = "#{dir}/src/#{package_root}"
-      package_dir = "#{package_root_dir}/prana"
+      package_dir = "#{dir}/src/github.com/phogolabs/prana"
 
-      mkdir_p package_root_dir
-      mv buildpath, package_root_dir
+      mkdir_p package_dir
+
+      Dir.glob("#{buildpath}/*").each do|file|
+        FileUtils.mv(file, package_dir)
+      end
 
       yield package_dir
     end
