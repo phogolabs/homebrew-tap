@@ -2,6 +2,7 @@
 
 require 'formula'
 require 'language/go'
+require 'tmpdir'
 
 # Homebrew formula that install Prana
 class Prana < Formula
