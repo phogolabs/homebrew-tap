@@ -2,6 +2,7 @@
 
 require 'formula'
 require 'language/go'
+require 'fileutils'
 require 'tmpdir'
 
 # Homebrew formula that install Prana
@@ -24,17 +25,18 @@ class Prana < Formula
   end
 
   def configure
-    dir = Dir.mktmpdir
-    ENV['GOPATH'] = dir
+    Dir.mktmpdir do |dir|
+      ENV['GOPATH'] = dir
 
-    package_root = 'github.com/phogolabs'
-    package_root_dir = "#{buildpath}/src/#{package_root}"
-    package_dir = "#{package_root_dir}/prana"
+      package_root = 'github.com/phogolabs'
+      package_root_dir = "#{buildpath}/src/#{package_root}"
+      package_dir = "#{package_root_dir}/prana"
 
-    mkdir_p package_root_dir
-    mv buildpath package_root_dir
+      mkdir_p package_root_dir
+      FileUtils.mv(buildpath, package_root_dir)
 
-    yield package_root, package_dir
+      yield package_root, package_dir
+    end
   end
 
   test do
