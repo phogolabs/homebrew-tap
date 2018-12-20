@@ -8,7 +8,7 @@ class Parcello < Formula
   desc 'Golang Resource Bundler and Embedder'
   homepage 'https://phogolabs.github.io/opensource/parcello/index.html'
   url 'https://github.com/phogolabs/parcello/archive/v0.8.1.tar.gz'
-  sha256 '68a328e3f42cb424a9f7ee7834d0ea5a1c456f678d701b1f0f94c89f1087e079'
+  sha256 'e79f9a8a60dbd29c4ec22c57e113809d900d19314f63522bcf1a179598036339'
   version '0.8.1'
 
   depends_on 'go' => :build
