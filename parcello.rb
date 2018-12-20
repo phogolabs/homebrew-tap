@@ -7,36 +7,40 @@ require 'language/go'
 class Parcello < Formula
   desc 'Golang Resource Bundler and Embedder'
   homepage 'https://phogolabs.github.io/opensource/parcello/index.html'
-  url 'https://github.com/phogolabs/parcello/archive/v0.8.tar.gz'
-  sha256 '32f7682f18a65a47a2e87a2b1b4adc9605421e17e739be447bcd867294d63b9a'
-  version '0.8'
+  url 'https://github.com/phogolabs/parcello/archive/v0.8.1.tar.gz'
+  sha256 '68a328e3f42cb424a9f7ee7834d0ea5a1c456f678d701b1f0f94c89f1087e079'
+  version '0.8.1'
 
   depends_on 'go' => :build
   depends_on 'glide' => :build
 
   def install
-    configure do |package_root, package_dir|
-      package_name = "#{package_root}/parcello"
-
+    configure do |package_dir, package_name|
       Dir.chdir(package_dir) do
-        system 'glide', 'install'
+        system 'go', 'mod', 'download'
+        system 'go', 'mod', 'verify'
         system 'go', 'build', "#{package_name}/cmd/parcello"
-      end
 
-      bin.install 'parcello'
+        bin.install 'parcello'
+      end
     end
   end
 
   def configure
-    ENV['GOPATH'] = buildpath
-    package_root = 'github.com/phogolabs'
-    package_root_dir = "#{buildpath}/src/#{package_root}"
-    package_dir = "#{package_root_dir}/parcello"
+    go_path = "#{buildpath}/go"
+    package_name = "github.com/phogolabs/parcello"
+    package_dir = "#{go_path}/src/#{package_name}"
 
-    mkdir_p package_root_dir
-    ln_sf buildpath, package_dir
+    mkdir_p package_dir
 
-    yield package_root, package_dir
+    Dir.glob("#{buildpath}/*").each do|file|
+      FileUtils.mv(file, package_dir) unless file == go_path
+    end
+
+    ENV['GOPATH'] = go_path
+    ENV['GO111MODULE'] = 'on'
+
+    yield package_dir, package_name
   end
 
   test do
