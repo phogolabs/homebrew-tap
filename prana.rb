@@ -28,16 +28,17 @@ class Prana < Formula
   end
 
   def configure
-    ENV['GOPATH'] = "#{buildpath}/go"
-    ENV['GO111MODULE'] = 'on'
-
+    go_path = "#{buildpath}/go"
     package_dir = "#{buildpath}/go/src/github.com/phogolabs/prana"
 
     mkdir_p package_dir
 
     Dir.glob("#{buildpath}/*").each do|file|
-      FileUtils.mv(file, package_dir) unless file == "go"
+      FileUtils.mv(file, package_dir) unless file == go_path
     end
+
+    ENV['GOPATH'] = go_path
+    ENV['GO111MODULE'] = 'on'
 
     yield package_dir
   end
