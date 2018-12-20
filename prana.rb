@@ -16,11 +16,11 @@ class Prana < Formula
   depends_on 'go' => :build
 
   def install
-    configure do |package_dir|
+    configure do |package_dir, package_name|
       Dir.chdir(package_dir) do
         system 'go', 'mod', 'download'
         system 'go', 'mod', 'verify'
-        system 'go', 'build', "#{package_dir}/cmd/prana"
+        system 'go', 'build', "#{package_name}/cmd/prana"
 
         bin.install 'prana'
       end
@@ -29,7 +29,8 @@ class Prana < Formula
 
   def configure
     go_path = "#{buildpath}/go"
-    package_dir = "#{buildpath}/go/src/github.com/phogolabs/prana"
+    package_name = "github.com/phogolabs/prana"
+    package_dir = "#{go_path}/src/#{package_name}"
 
     mkdir_p package_dir
 
@@ -40,7 +41,7 @@ class Prana < Formula
     ENV['GOPATH'] = go_path
     ENV['GO111MODULE'] = 'on'
 
-    yield package_dir
+    yield package_dir, package_name
   end
 
   test do
