@@ -7,23 +7,16 @@ require 'language/go'
 class Prana < Formula
   desc 'Golang Database Manager'
   homepage 'https://phogolabs.github.io/opensource/prana'
-  url 'https://github.com/phogolabs/prana/archive/v1.0-beta-03.tar.gz'
-  sha256 'cb5c72f08bda80682bdbf954ed69bbdb897aa3921c888e5a6589721afe0b0f1e'
-  version '1.0-beta-03'
+  url 'https://github.com/phogolabs/prana/archive/v1.0-beta-04.tar.gz'
+  sha256 '4302f519cbfc5292080096736b351ced8a9740f0a0b4ebe387925bbb949d0aee'
+  version '1.0-beta-04'
 
   depends_on 'go' => :build
-  depends_on 'glide' => :build
 
   def install
     configure do |package_root, package_dir|
-      package_name = "#{package_root}/prana"
-
-      ENV['GO111MODULE'] = 'on'
-
       Dir.chdir(package_dir) do
-        system 'go', 'mod', 'download'
-        system 'go', 'mod', 'verify'
-        system 'go', 'build', "#{package_name}/cmd/prana"
+        system "script/build.sh"
       end
 
       bin.install 'prana'
