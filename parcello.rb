@@ -12,7 +12,6 @@ class Parcello < Formula
   version '0.8.1'
 
   depends_on 'go' => :build
-  depends_on 'glide' => :build
 
   def install
     configure do |package_dir, package_name|
