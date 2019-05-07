@@ -9,8 +9,8 @@ require 'tmpdir'
 class Prana < Formula
   desc 'Golang Database Manager'
   homepage 'https://phogolabs.github.io/opensource/prana'
-  url 'https://github.com/phogolabs/prana/archive/v1.0-beta-05.tar.gz'
-  sha256 'f70902960c6d13c40d25d443a5d2337d4144638eb38f7dd6d39263ff8681a34e'
+  url 'https://github.com/phogolabs/prana/archive/v1.0-beta-06.tar.gz'
+  sha256 '1f32486156edd5f575dbdb41265fcc27c6b0660ef635747696bdcd89fe309e26a'
   version '1.0-beta-05'
 
   depends_on 'go' => :build
