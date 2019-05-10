@@ -11,7 +11,7 @@ class Prana < Formula
   homepage 'https://phogolabs.github.io/opensource/prana'
   url 'https://github.com/phogolabs/prana/archive/v1.0-beta-06.tar.gz'
   sha256 '1f32486156edd5f575dbdb41265fcc27c6b0660ef635747696bdcd89fe309e26a'
-  version '1.0-beta-05'
+  version '1.0-beta-06'
 
   depends_on 'go' => :build
 
