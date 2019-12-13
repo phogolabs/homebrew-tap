@@ -7,7 +7,7 @@ class Stride < Formula
 
   if OS.mac?
     url "https://github.com/phogolabs/stride/releases/download/v0.0.1-rc1/stride_0.0.1-rc1_darwin_amd64.tar.gz"
-    sha256 "cf1d1f25a337203fbd9325cc5aef30ffec631b58bbfb6588640e498e43b0b85c"
+    sha256 "69fcf96c68c1f94604558d64af8a6c981d1776025567db9c8a0a10856a867ea7"
   elsif OS.linux?
   end
 
