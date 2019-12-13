@@ -2,12 +2,12 @@
 class Stride < Formula
   desc "OpenAPI viewer, editor, generator, validator and mocker"
   homepage "https://github.com/phogolabs/stride"
-  version "0.0.1-rc1"
+  version "0.0.1-rc2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/phogolabs/stride/releases/download/v0.0.1-rc1/stride_0.0.1-rc1_darwin_amd64.tar.gz"
-    sha256 "69fcf96c68c1f94604558d64af8a6c981d1776025567db9c8a0a10856a867ea7"
+    url "https://github.com/phogolabs/stride/releases/download/v0.0.1-rc2/stride_0.0.1-rc2_darwin_amd64.tar.gz"
+    sha256 "a7aa1b8c6de4d99ff42a26f65bb511379d98e61c2339cd5c7cab67420c72cf9e"
   elsif OS.linux?
   end
 
