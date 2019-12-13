@@ -1,19 +1,24 @@
 # homebrew-tap
 
-Homebrew TAP for Phogo Labs Software
+Presently, the tap installs the following applications:
 
-Presently, the tap installs:
-
-#### [PARCELLO](https://github.com/phogolabs/parcello): Golang Resournce Bundler and Embedder
+#### [stride](https://github.com/phogolabs/stride) - OpenAPI viewer, editor, generator, validator and mocker
 
 ```console
 $ brew tap phogolabs/tap
-$ brew install parcello
+$ brew install stride
 ```
 
-#### [PRANA](https://github.com/phogolabs/prana): Golang Database Manager
+#### [prana](https://github.com/phogolabs/prana) - Golang Database Manager
 
 ```console
 $ brew tap phogolabs/tap
 $ brew install prana
+```
+
+#### [parcello](https://github.com/phogolabs/parcello) - Golang Resournce Bundler and Embedder
+
+```console
+$ brew tap phogolabs/tap
+$ brew install parcello
 ```
