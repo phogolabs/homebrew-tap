@@ -7,11 +7,11 @@ class Stride < Formula
 
   if OS.mac?
     url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc1/prana_1.0.0-rc1_darwin_amd64.tar.gz"
-    sha256 "7e4efcc392fe46e2006cc5e2c96f25a943415e9d46fe0435a65bdd5eada6204e"
+    sha256 "3dfc1572e52360618153067863f683f80bcce6ffd7dde1bb1e6422462d22d5f2"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc1/prana_1.0.0-rc1_linux_amd64.tar.gz"
-      sha256 "5be81c609d193e3bfdcd641e279b5a98cc2bf07f9119f7d0f4534f1602d69c7c"
+      sha256 "638e96a70f2dfbdc456866cc891caaad09e5c545344b89978fa5a2162eb0fe3b"
     end
   end
 
