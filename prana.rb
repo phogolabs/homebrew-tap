@@ -2,16 +2,16 @@
 class Prana < Formula
   desc "Golang Database Management and Code Generation"
   homepage "https://github.com/phogolabs/prana"
-  version "1.0.0-rc1"
+  version "1.0.0-rc2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc1/prana_1.0.0-rc1_darwin_amd64.tar.gz"
-    sha256 "d4b8c0b1574326664694421e36724217ea51ac906b4b56e1f35a1890cae6f687"
+    url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc2/prana_1.0.0-rc2_darwin_amd64.tar.gz"
+    sha256 "757bafcb55f188ae2b340639eea3446fe7907f2b558bcbf4f9e4f76a774c8a30"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc1/prana_1.0.0-rc1_linux_amd64.tar.gz"
-      sha256 "be1ed9c6c2669eb7722c7b91a94be6c7b168d65053a5cdf0d58031ab41f07167"
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc2/prana_1.0.0-rc2_linux_amd64.tar.gz"
+      sha256 "30eadb1e7f2e46b36f262b3452a1dc1ebf65be45a82520c2d9ce90dae9cb2ec3"
     end
   end
 
