@@ -2,16 +2,16 @@
 class Prana < Formula
   desc "Vendoring made easy"
   homepage "https://github.com/phogolabs/strava"
-  version "0.0.1"
+  version "0.0.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/phogolabs/strava/releases/download/v0.0.1/strava_0.0.1_darwin_amd64.tar.gz"
-    sha256 "ce71689322ddedb3a0c755b50f56353060f1fb6d8df37c9a83bb0bbfdb53ba5e"
+    url "https://github.com/phogolabs/strava/releases/download/v0.0.2/strava_0.0.2_darwin_amd64.tar.gz"
+    sha256 "00007e7a4ac514df8bc74aba72200b9f9291278e2145ae2d3dc2029f014f05b2"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/phogolabs/strava/releases/download/v0.0.1/strava_0.0.1_linux_amd64.tar.gz"
-      sha256 "d3467dc1bbf169a5272e50e570865b5623c735c6dcff9a36228720c71edf5d33"
+      url "https://github.com/phogolabs/strava/releases/download/v0.0.2/strava_0.0.2_linux_amd64.tar.gz"
+      sha256 "1fdb8dc865b3baaf0c7a62f8a3e53c7bc9b1b7e6a20a80981219ea88b4162736"
     end
   end
 
