@@ -5,28 +5,28 @@
 class Prana < Formula
   desc "Golang Database Management and Code Generation"
   homepage "https://github.com/phogolabs/prana"
-  version "1.0.0-rc6"
+  version "1.0.0-rc7"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc6/prana_1.0.0-rc6_darwin_amd64.tar.gz"
-      sha256 "c7e03bafface69c38f18f37f1c1c7f2ddce47680b2014b17b205e5647e6a4249"
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc7/prana_1.0.0-rc7_darwin_amd64.tar.gz"
+      sha256 "b06dcde4d3328a1a21481f862b2fdf6b3263fb369b245e674b2c7a8a48e27bdb"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc6/prana_1.0.0-rc6_darwin_arm64.tar.gz"
-      sha256 "8678e97401aba931ea6b11c1369aab344977fdc0eecc8102ab1f9ed82ba65f6a"
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc7/prana_1.0.0-rc7_darwin_arm64.tar.gz"
+      sha256 "878e5e19a8c09b384ceeceb455b9c183cb4528935a434bbfd1f380a70f369496"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc6/prana_1.0.0-rc6_linux_amd64.tar.gz"
-      sha256 "925269a9ae08bcee5b91735ac23baf8c3d333411a1c9df9679eeae43f74c55ce"
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc7/prana_1.0.0-rc7_linux_amd64.tar.gz"
+      sha256 "5b24d6549e31b6adf532f09fb57e95d787d48ae4ea924faef634c4c4c0ce406d"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc6/prana_1.0.0-rc6_linux_arm64.tar.gz"
-      sha256 "fa7de8954d9e9d33b5daf1457e9bac2527419d0d6733841070bef93d511055f3"
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc7/prana_1.0.0-rc7_linux_arm64.tar.gz"
+      sha256 "83eccb463db1073f9bd788c605fb62773113341634f02cde3b59065ac75a9502"
     end
   end
 
