@@ -5,24 +5,29 @@
 class Prana < Formula
   desc "Golang Database Management and Code Generation"
   homepage "https://github.com/phogolabs/prana"
-  version "1.0.0-rc3"
+  version "1.0.0-rc4"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc3/prana_1.0.0-rc3_darwin_amd64.tar.gz"
-    sha256 "16257df8599d3df16c623eab4fb48c737ba9a358aba74511926773e4cb4b60ca"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc4/prana_1.0.0-rc4_darwin_amd64.tar.gz"
+      sha256 "893cd1419a5cc3f93e3841083eb171c73ceffcedbbdacc3941ec1a2d2cbfbf6a"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc4/prana_1.0.0-rc4_darwin_arm64.tar.gz"
+      sha256 "c0f40569f40e8150ec99395227990f50574e7a1e1a19e9aeade6213389810bbf"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc3/prana_1.0.0-rc3_darwin_arm64.tar.gz"
-    sha256 "5239e7a91ed058fd228f7763ad701e764eca644e775b91f996d6447e0af35179"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc3/prana_1.0.0-rc3_linux_amd64.tar.gz"
-    sha256 "baa7dff67b36017ef36da90c058632b848b5ee408ecec73c698f77177d2f1f65"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc3/prana_1.0.0-rc3_linux_arm64.tar.gz"
-    sha256 "a0098463a43af19097b1756d2fff297868a0f07b878b7470666011ec7109e3a4"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc4/prana_1.0.0-rc4_linux_amd64.tar.gz"
+      sha256 "f9642009dcc7a0cbdb14b3d4654055beeb2e6e5938898f51d0b2f1cc6101b4e4"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc4/prana_1.0.0-rc4_linux_arm64.tar.gz"
+      sha256 "02484ae8067ca0d81abe16bbd590565bd62622447bf5fc9e13a9fea5edb540f5"
+    end
   end
 
   def install
