@@ -5,33 +5,52 @@
 class Strava < Formula
   desc "Vendoring made easy"
   homepage "https://github.com/phogolabs/strava"
-  version "0.0.3"
-  bottle :unneeded
+  version "0.0.4"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/phogolabs/strava/releases/download/v0.0.3/strava_0.0.3_darwin_amd64.tar.gz"
-      sha256 "b819519bebe25aa373a2ae558dd162c20f7040e797f4b83da6c903c57046b5d0"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/phogolabs/strava/releases/download/v0.0.3/strava_0.0.3_darwin_arm64.tar.gz"
-      sha256 "3ec17c13961cec2c7ec594fb49801ec10139e79c0f9cae6e9c25fb5b2bacac9f"
+      url "https://github.com/phogolabs/strava/releases/download/v0.0.4/strava_0.0.4_darwin_arm64.tar.gz"
+      sha256 "4f8d8e45a215fa39fed4a22b2fd19feb4f33c9ed9f698c8d26a140208faa381a"
+
+      def install
+        bin.install "strava"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/phogolabs/strava/releases/download/v0.0.4/strava_0.0.4_darwin_amd64.tar.gz"
+      sha256 "093d151e629aae503f5f582b5c3ce14b6af5d2ea1b96b80dc2bfff928d63a825"
+
+      def install
+        bin.install "strava"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/phogolabs/strava/releases/download/v0.0.3/strava_0.0.3_linux_amd64.tar.gz"
-      sha256 "1028b3d6338fea9242756f4730c2b2019a049f80af1f09ffab2cdae68732df34"
+      url "https://github.com/phogolabs/strava/releases/download/v0.0.4/strava_0.0.4_linux_amd64.tar.gz"
+      sha256 "0ade06ed7aaecc6c96512345cd2cef2b8a1f3746368fa7ce8226e125bcca66cc"
+
+      def install
+        bin.install "strava"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/phogolabs/strava/releases/download/v0.0.4/strava_0.0.4_linux_armv6.tar.gz"
+      sha256 "02bbd10f5b3ae3b79c3c14285588427ff5b54623b19b8101bac3acc1364535b9"
+
+      def install
+        bin.install "strava"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/phogolabs/strava/releases/download/v0.0.3/strava_0.0.3_linux_arm64.tar.gz"
-      sha256 "eb57d889a6284a5ea3742af446754cd5335670342ebc86282728130d646b1bfa"
-    end
-  end
+      url "https://github.com/phogolabs/strava/releases/download/v0.0.4/strava_0.0.4_linux_arm64.tar.gz"
+      sha256 "7644f9baae73e8aa62bdcca0053c7de6cbc07eb25310ca22e0d65e86d2e54a68"
 
-  def install
-    bin.install "strava"
+      def install
+        bin.install "strava"
+      end
+    end
   end
 
   test do
