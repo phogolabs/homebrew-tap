@@ -5,33 +5,52 @@
 class Prana < Formula
   desc "Golang Database Management and Code Generation"
   homepage "https://github.com/phogolabs/prana"
-  version "1.0.0-rc9"
-  bottle :unneeded
+  version "1.0.0-rc10"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc9/prana_1.0.0-rc9_darwin_amd64.tar.gz"
-      sha256 "8f198a7a378bdeb3ed82a015dec35761fc543301723e3eaf75524e5c5a0c57cc"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc9/prana_1.0.0-rc9_darwin_arm64.tar.gz"
-      sha256 "f251264dd2365419661ceb35811f26f75871587f354571c76c0198a577354f93"
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc10/prana_1.0.0-rc10_darwin_arm64.tar.gz"
+      sha256 "55097076d441034309d0b8f29fcc1567741b2b3a1142c6888daf9e9cb321d69d"
+
+      def install
+        bin.install "prana"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc10/prana_1.0.0-rc10_darwin_amd64.tar.gz"
+      sha256 "3577f6391d441ecf89b9c304696432571309fb016e9931567fd1cd4a3e799271"
+
+      def install
+        bin.install "prana"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc9/prana_1.0.0-rc9_linux_amd64.tar.gz"
-      sha256 "a6e47d34ff469ffbd86e4042329f02f4517e80e2d8af9a10c2e042e93d9da537"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc9/prana_1.0.0-rc9_linux_arm64.tar.gz"
-      sha256 "29f8d16d28d6b5ee7ab189689ad25e5cf02883fedd9edd3d6620425b843c4a12"
-    end
-  end
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc10/prana_1.0.0-rc10_linux_arm64.tar.gz"
+      sha256 "fcc690e848cc4245b540c216cd5eef09b1b16a2e6be3dd85a96acc7dba57859a"
 
-  def install
-    bin.install "prana"
+      def install
+        bin.install "prana"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc10/prana_1.0.0-rc10_linux_armv6.tar.gz"
+      sha256 "b163e9b88450174d427ecb0f09cd3b8c71f4d2357ce0333f34aab870804f6210"
+
+      def install
+        bin.install "prana"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/phogolabs/prana/releases/download/v1.0.0-rc10/prana_1.0.0-rc10_linux_amd64.tar.gz"
+      sha256 "8fffb69d123084af1d10dfc136a309b9a53c4cdff1673f55ce602d6cbb7c2f8e"
+
+      def install
+        bin.install "prana"
+      end
+    end
   end
 
   test do
